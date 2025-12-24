@@ -10,7 +10,7 @@ const ServiceDetails = async ({ params }) => {
     <section className="max-w-7xl mx-auto px-6 py-16">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         {/* Image */}
-        <div className="relative w-full h-[350px] rounded-3xl overflow-hidden">
+        <div className="relative w-full h-87.5 rounded-3xl overflow-hidden">
           <Image
             src={service.image}
             alt={service.name}
@@ -46,7 +46,7 @@ const ServiceDetails = async ({ params }) => {
             <p className="text-2xl font-bold text-primary">৳ {service.price}</p>
 
             <Link
-              href="/book-care"
+              href="/booking"
               className="btn btn-primary rounded-full px-8"
             >
               Book Now
