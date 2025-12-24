@@ -1,26 +1,44 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+  themes: light --default;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  /* Brand Colors – calm & caring */
+  --color-primary: oklch(68% 0.14 210); /* soft sky blue */
+  --color-secondary: oklch(64% 0.12 155); /* gentle green */
+  --color-accent: oklch(78% 0.1 55); /* warm peach */
+
+  /* Base – clean & soft */
+  --color-base-100: oklch(99% 0.005 95); /* off-white */
+  --color-base-200: oklch(96% 0.01 95);
+  --color-base-300: oklch(92% 0.015 95);
+
+  /* Neutral – readable & calm */
+  --color-neutral: oklch(34% 0.02 240); /* soft navy gray */
+  --color-neutral-content: oklch(96% 0 0);
+
+  /* Feedback – gentle, not alarming */
+  --color-success: oklch(68% 0.15 150); /* caring green */
+  --color-error: oklch(60% 0.2 25); /* soft coral red */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
 }
