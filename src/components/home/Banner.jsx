@@ -69,7 +69,7 @@ const Banner = () => {
 
               <div className="flex gap-4">
                 <Link
-                  href="/book-care"
+                  href="/booking"
                   className="btn btn-primary rounded-full px-8"
                 >
                   Book Care

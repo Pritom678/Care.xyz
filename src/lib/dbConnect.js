@@ -2,7 +2,9 @@ const uri = process.env.MONGODB_URI;
 const dbname = process.env.DBNAME;
 export const collections = {
   SERVICES: "services",
-  USERS: 'users'
+  USERS: "users",
+  LOCATIONS: "locations",
+  BOOKINGS: "bookings",
 };
 
 const { MongoClient, ServerApiVersion } = require("mongodb");

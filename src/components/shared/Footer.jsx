@@ -83,7 +83,7 @@ const Footer = () => {
           </ul>
 
           <Link
-            href="/book-care"
+            href="/booking"
             className="btn btn-primary btn-sm rounded-full mt-5"
           >
             Book Care
