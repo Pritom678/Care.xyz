@@ -15,16 +15,11 @@ export async function proxy(req) {
     );
   }
 
-  //   console.log(token, isPrivateReq, reqPath, isAuthenticated);
-  //   return NextResponse.redirect(new URL("/", request.url));
 
   return NextResponse.next();
 }
 
-// Alternatively, you can use a default export:
-// export default function proxy(request) { ... }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: ["/dashboard/:path*", "/booking/:path*", "/my-bookings/:path*"],
 };

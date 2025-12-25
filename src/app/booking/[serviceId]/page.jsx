@@ -4,6 +4,8 @@ import { getLocations } from "@/actions/server/location";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 
+
+
 const BookingPage = async ({ params }) => {
   const { serviceId } = await params;
 

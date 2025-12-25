@@ -22,10 +22,77 @@ const nunito = Nunito({
 });
 
 export const metadata = {
-  title: "Care.xyz",
-  template: "%s | Care.xyz",
+  metadataBase: new URL("https://care.xyz"),
+
+  title: {
+    default: "Care.xyz | Trusted Caregiving Services",
+    template: "%s | Care.xyz",
+  },
+
   description:
-    "Trusted caregiving services for children and the elderly. Compassion, safety, and dignity — only at Care.xyz.",
+    "Care.xyz provides trusted caregiving services for children, elderly, and families. Book verified caregivers for safe, compassionate, and professional care.",
+
+  keywords: [
+    "caregiving services",
+    "child care",
+    "elder care",
+    "home care services",
+    "professional caregivers",
+    "nanny services",
+    "senior care",
+    "Care.xyz",
+  ],
+
+  authors: [{ name: "Care.xyz Team", url: "https://care.xyz" }],
+  creator: "Care.xyz",
+  publisher: "Care.xyz",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "Care.xyz | Trusted Caregiving Services",
+    description:
+      "Book trusted caregivers for children and elderly care. Safe, compassionate, and reliable services at Care.xyz.",
+    url: "https://care.xyz",
+    siteName: "Care.xyz",
+    images: [
+      {
+        url: "/og-image.png", // place this in /public
+        width: 1200,
+        height: 630,
+        alt: "Care.xyz Caregiving Services",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Care.xyz | Trusted Caregiving Services",
+    description:
+      "Find professional caregivers for children and seniors. Compassionate care you can trust.",
+    images: [
+      "https://res.cloudinary.com/do3iu9q7d/image/upload/v1766650849/Screenshot_2025-12-25_142016_be74ic.png",
+    ],
+    creator: "@carexyz", // optional
+  },
+
+  alternates: {
+    canonical: "https://care.xyz",
+  },
+
+  category: "Healthcare & Caregiving",
 };
 
 export default function RootLayout({ children }) {
