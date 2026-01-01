@@ -9,51 +9,58 @@ Care.xyz is a full-stack web application that connects families with verified pr
 ## What I've Done
 
 ### 1. **Setup & Architecture**
-   - Initialized a Next.js 16.1.1 project with modern React 19.2.3
-   - Configured Tailwind CSS 4.1.18 for utility-first styling
-   - Set up DaisyUI component library for enhanced UI components
-   - Implemented NextAuth.js for secure authentication system
-   - Configured MongoDB for data persistence
+
+- Initialized a Next.js 16.1.1 project with modern React 19.2.3
+- Configured Tailwind CSS 4.1.18 for utility-first styling
+- Set up DaisyUI component library for enhanced UI components
+- Implemented NextAuth.js for secure authentication system
+- Configured MongoDB for data persistence
 
 ### 2. **Animation Implementation**
-   - Integrated GSAP (3.14.2) and @gsap/react (2.1.2) for professional animations
-   - **Banner Component**: Created auto-sliding carousel with smooth fade and slide transitions
-     - 5-second auto-rotation between 3 slides
-     - Smooth text animations for titles and descriptions
-     - Manual navigation with indicator dots
-   - **Logo Component**: Added fade-in animation on page load
-   - **Navigation Bar**: Implemented staggered animation for nav items with smooth entry
+
+- Integrated GSAP (3.14.2) and @gsap/react (2.1.2) for professional animations
+- **Banner Component**: Created auto-sliding carousel with smooth fade and slide transitions
+  - 5-second auto-rotation between 3 slides
+  - Smooth text animations for titles and descriptions
+  - Manual navigation with indicator dots
+- **Logo Component**: Added fade-in animation on page load
+- **Navigation Bar**: Implemented staggered animation for nav items with smooth entry
 
 ### 3. **Authentication System**
-   - Implemented secure user registration and login
-   - Password hashing with Bcrypt and bcryptjs
-   - Session management with NextAuth.js and JWT tokens
-   - Protected routes for authenticated users only
-   - "My Bookings" feature only visible to logged-in users
+
+- Implemented secure user registration and login
+- Password hashing with Bcrypt and bcryptjs
+- Session management with NextAuth.js and JWT tokens
+- Protected routes for authenticated users only
+- "My Bookings" feature only visible to logged-in users
 
 ### 4. **Booking System**
-   - Service browsing and selection
-   - Dynamic booking form with service-specific information
-   - Booking confirmation and tracking
-   - My Bookings page for user's booking history
+
+- Service browsing and selection
+- Dynamic booking form with service-specific information
+- Booking confirmation and tracking
+- My Bookings page for user's booking history
 
 ### 5. **Email Notifications**
-   - Integrated Nodemailer for sending emails
-   - Booking confirmation emails
-   - Professional email templates
-   - Email verification system
+
+- Integrated Nodemailer for sending emails
+- Booking confirmation emails
+- Professional email templates
+- Email verification system
 
 ### 6. **UI/UX Components**
-   - Responsive navbar with mobile menu
-   - Professional footer
-   - Service cards with detailed information
-   - About, Contact, and Services pages
-   - User registration and login forms
-   - Beautiful alerts with SweetAlert2
+
+- Responsive navbar with mobile menu
+- Professional footer
+- Service cards with detailed information
+- About, Contact, and Services pages
+- User registration and login forms
+- Beautiful alerts with SweetAlert2
 
 ## Tech Stack & Dependencies
 
 ### Core Framework & Runtime
+
 ```json
 {
   "next": "16.1.1",
@@ -61,11 +68,13 @@ Care.xyz is a full-stack web application that connects families with verified pr
   "react-dom": "19.2.3"
 }
 ```
+
 - **Next.js**: React framework with built-in optimization and server-side rendering
 - **React**: UI library for building interactive components
 - **React DOM**: React rendering for web browsers
 
 ### Styling & UI Framework
+
 ```json
 {
   "@tailwindcss/postcss": "4.1.18",
@@ -74,21 +83,25 @@ Care.xyz is a full-stack web application that connects families with verified pr
   "postcss": "4.1.18"
 }
 ```
+
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development
 - **DaisyUI**: Pre-built Tailwind components for faster development
 - **PostCSS**: CSS transformation tool for processing stylesheets
 
 ### Animations & Interactions
+
 ```json
 {
   "gsap": "3.14.2",
   "@gsap/react": "2.1.2"
 }
 ```
+
 - **GSAP**: Industry-standard JavaScript animation library for smooth, high-performance animations
 - **@gsap/react**: React hook integration for GSAP for optimal performance
 
 ### Authentication & Security
+
 ```json
 {
   "next-auth": "4.24.13",
@@ -97,45 +110,54 @@ Care.xyz is a full-stack web application that connects families with verified pr
   "jose": "^5.0.0"
 }
 ```
+
 - **NextAuth.js**: Complete authentication solution for Next.js
 - **Bcrypt**: Industry-standard password hashing library
 - **bcryptjs**: JavaScript implementation of bcrypt for password security
 - **Jose**: JWT (JSON Web Tokens) handling for secure token management
 
 ### Database
+
 ```json
 {
   "mongodb": "7.0.0"
 }
 ```
+
 - **MongoDB**: NoSQL database for flexible data storage and retrieval
 - Includes Mongoose driver for object modeling and schema validation
 
 ### Email Service
+
 ```json
 {
   "nodemailer": "7.0.12"
 }
 ```
+
 - **Nodemailer**: Popular Node.js email sending library for SMTP-based emails
 
 ### User Experience
+
 ```json
 {
   "react-icons": "5.5.0",
   "sweetalert2": "11.26.17"
 }
 ```
+
 - **React Icons**: Comprehensive icon library with React components
 - **SweetAlert2**: Beautiful, responsive, and customizable alerts/modals
 
 ### Development Tools
+
 ```json
 {
   "eslint": "^9",
   "eslint-config-next": "16.1.1"
 }
 ```
+
 - **ESLint**: Code quality and style linting
 - **ESLint Next.js Config**: Next.js specific linting rules
 
@@ -226,6 +248,7 @@ care-service/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 - MongoDB instance (local or cloud)
 - Email service credentials (for Nodemailer)
@@ -233,18 +256,21 @@ care-service/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd care-service
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Environment Setup**
    Create a `.env.local` file in the root directory:
+
    ```
    MONGODB_URI=your_mongodb_connection_string
    NEXTAUTH_SECRET=your_secret_key
@@ -255,6 +281,7 @@ care-service/
    ```
 
 4. **Run development server**
+
    ```bash
    npm run dev
    ```
@@ -272,29 +299,34 @@ care-service/
 ## Key Features Implemented
 
 ### 🎨 Animations
+
 - Smooth GSAP-powered banner carousel with auto-rotation
 - Fade-in animations on logo and navigation items
 - Responsive animations that work on all devices
 - Optimized animation performance using @gsap/react hooks
 
 ### 🔐 Authentication
+
 - Secure user registration and login
 - Password hashing with industry-standard Bcrypt
 - Session management with NextAuth.js
 - Protected routes and conditional rendering based on auth status
 
 ### 📅 Booking System
+
 - Browse available services
 - Dynamic booking form
 - Booking confirmation and history
 - Email notifications on booking
 
 ### 📧 Email Notifications
+
 - Booking confirmation emails
 - Professional email templates
 - HTML-based email design
 
 ### 🎯 User Experience
+
 - Responsive design for desktop and mobile
 - Smooth transitions and interactions
 - Professional UI with DaisyUI components
@@ -302,16 +334,16 @@ care-service/
 
 ## Dependencies Overview
 
-| Category | Purpose | Key Packages |
-|----------|---------|--------------|
-| **Framework** | React app with Next.js | next, react, react-dom |
-| **Styling** | CSS and component library | tailwindcss, daisyui, postcss |
-| **Animations** | Smooth, high-performance animations | gsap, @gsap/react |
-| **Authentication** | Secure user auth and sessions | next-auth, bcrypt, bcryptjs, jose |
-| **Database** | Data persistence | mongodb |
-| **Email** | Email sending service | nodemailer |
-| **UI Enhancements** | Icons and alerts | react-icons, sweetalert2 |
-| **Development** | Code quality tools | eslint |
+| Category            | Purpose                             | Key Packages                      |
+| ------------------- | ----------------------------------- | --------------------------------- |
+| **Framework**       | React app with Next.js              | next, react, react-dom            |
+| **Styling**         | CSS and component library           | tailwindcss, daisyui, postcss     |
+| **Animations**      | Smooth, high-performance animations | gsap, @gsap/react                 |
+| **Authentication**  | Secure user auth and sessions       | next-auth, bcrypt, bcryptjs, jose |
+| **Database**        | Data persistence                    | mongodb                           |
+| **Email**           | Email sending service               | nodemailer                        |
+| **UI Enhancements** | Icons and alerts                    | react-icons, sweetalert2          |
+| **Development**     | Code quality tools                  | eslint                            |
 
 ## Performance Optimizations
 
