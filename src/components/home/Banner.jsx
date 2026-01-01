@@ -1,5 +1,7 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -37,6 +39,29 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useGSAP(() => {
+    gsap.set([`#text-${current}`, `.para-${current}`], { opacity: 0, y: 20 });
+
+    const prev = current === 0 ? slides.length - 1 : current - 1;
+
+    const tl = gsap.timeline({
+      defaults: { duration: 0.5, ease: "power2.out" },
+    });
+
+    tl.to([`#text-${prev}`, `.para-${prev}`], { opacity: 0, y: -20 });
+
+    tl.fromTo(
+      `#text-${current}`,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0 }
+    ).fromTo(
+      `.para-${current}`,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, stagger: 0.1},
+      "-=0.3"
+    );
+  }, [current]);
+
   return (
     <section className="relative w-full min-h-[85vh] overflow-hidden">
       {slides.map((slide, index) => (
@@ -60,10 +85,15 @@ const Banner = () => {
           {/* Content */}
           <div className="relative z-20 max-w-7xl mx-auto px-6 h-full flex items-center">
             <div className="max-w-xl space-y-6 text-white">
-              <h1 className="text-4xl lg:text-5xl font-semibold leading-tight">
+              <h1
+                className="text-4xl lg:text-5xl font-semibold leading-tight"
+                id={`text-${index}`}
+              >
                 {slide.title}
               </h1>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p
+                className={`text-lg leading-relaxed text-white/90 para-${index}`}
+              >
                 {slide.description}
               </p>
 

@@ -100,6 +100,7 @@ export default function RootLayout({ children }) {
     <NextAuthProvider>
       <html lang="en">
         <body className={`${nunito.className} antialiased`}>
+          
           <header>
             <Navbar></Navbar>
           </header>

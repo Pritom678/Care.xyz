@@ -1,10 +1,19 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Logo = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".logo",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
+    );
+  });
   return (
-    <Link href={"/"} className=" flex items-center gap-1">
+    <Link href={"/"} className="logo flex items-center gap-1">
       <Image alt="logo-care" src={"/care.png"} width={50} height={40} />
       <h2 className="text-xl font-bold">
         Care<span className="text-primary">.xyz</span>{" "}

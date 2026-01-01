@@ -4,10 +4,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import { signOut, useSession } from "next-auth/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const { data: session, status } = useSession(); // Better: use data and status
+  const { data: session, status } = useSession();
+  const hasAnimated = useRef(false);
+
+  useGSAP(() => {
+    if (hasAnimated.current) return;
+
+    hasAnimated.current = true;
+    gsap.fromTo(
+      ".nav",
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.2, stagger: 0.1, ease: "power2.out" }
+    );
+  }, []);
 
   const baseNavLinks = [
     { name: "Home", href: "/" },
@@ -18,12 +33,13 @@ const Navbar = () => {
   ];
 
   // Conditionally add "My Bookings" only if authenticated
-  const navLinks = status === "authenticated"
-    ? [...baseNavLinks, { name: "My Bookings", href: "/my-bookings" }]
-    : baseNavLinks;
+  const navLinks =
+    status === "authenticated"
+      ? [...baseNavLinks, { name: "My Bookings", href: "/my-bookings" }]
+      : baseNavLinks;
 
   const linkClass = (href) =>
-    `rounded-full px-4 py-2 transition-all duration-300 ${
+    `nav rounded-full px-4 py-2 transition-all duration-300 ${
       pathname === href
         ? "bg-primary text-white"
         : "hover:bg-base-200 text-neutral"
@@ -58,7 +74,11 @@ const Navbar = () => {
           >
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link className={linkClass(link.href)} href={link.href}>
+                <Link
+                  id="navlink"
+                  className={linkClass(link.href)}
+                  href={link.href}
+                >
                   {link.name}
                 </Link>
               </li>
